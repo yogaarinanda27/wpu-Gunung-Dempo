@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dempo Park</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/8/88/Lambang_Kota_Pagar_Alam.gif">
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Lobster&display=swap');
+    body {
+        font-family: 'Exo 2', sans-serif;
+        overflow-x: hidden;
+        background-image: url("https://pbs.twimg.com/media/DbY6c42VQAAk7NA.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    h3 {
+        font-family: 'Lobster', cursive;
+        color: #36384c;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    main {
+        padding: 15px 10% 5%;
+        overflow: auto;
+    }
+    
+    .jumbotron {
+        font-size: 20px;
+        padding: 60px;
+        background-image: url("https://wisatazainal.files.wordpress.com/2018/11/danau-tebat-geban-1.jpg?w=825");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: rgb(252, 252, 252);
+    }
+    
+    nav {
+        display: flex;
+        background-color: #53bd84;
+        justify-content: space-around;
+        height: 50px;
+        align-items: center;
+        color: #36384c;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        width: 40%;
+        justify-content: space-between;
+    }
+    
+    nav ul li a {
+        color: rgb(252, 252, 252);
+        text-decoration: none;
+        font-size: 15px;
+    }
+    
+    nav ul li a:hover {
+        color: rgb(235, 230, 230);
+    }
+    
+    nav .logo {
+        font-family: 'Lobster', cursive;
+        letter-spacing: 2px;
+        font-size: x-large;
+    }
+    
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .menu-toggle input {
+        position: absolute;
+        width: 40px;
+        height: 25px;
+        left: -6px;
+        top: -3px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: rgb(252, 250, 250);
+        border-radius: 3px;
+        transition: all 0.5s;
+    }
+    
+    .menu-toggle span:nth-child(2) {
+        transform-origin: 0 0;
+    }
+    
+    .menu-toggle span:nth-child(4) {
+        transform-origin: 0 100;
+    }
+    
+    .menu-toggle input:checked~span:nth-child(2) {
+        background-color: white;
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+    
+    .menu-toggle input:checked~span:nth-child(3) {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    .menu-toggle input:checked~span:nth-child(4) {
+        background-color: white;
+        transform: rotate(-45deg) translate(2px, -10px);
+    }
+    
+    #content {
+        float: right;
+        width: 75%;
+    }
+    
+    aside {
+        float: left;
+        width: 25%;
+        padding-right: 20px;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    header {
+        display: inline;
+    }
+    
+    .featured-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    footer {
+        padding: 20px;
+        color: #36384c;
+        background-color: #53bd84;
+        text-align: center;
+    }
+    
+    .profile img {
+        width: 185px;
+    }
+    
+    .card {
+        padding: 20px;
+        background-color: #53bd84;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+    }
+    
+    .profile header {
+        text-align: center;
+    }
+    
+    .flex-box {
+        width: 850px;
+        margin: 10px 0 0 -21px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .thumbnail {
+        width: 47%;
+        margin: 6px;
+    }
+    
+    .thumbnail img {
+        width: 100%;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        #content,
+        aside {
+            width: 100%;
+            padding: 0;
+        }
+        .flex-box,
+        .thumbnail {
+            width: 100%;
+            margin: 6px 0;
+        }
+        .menu-toggle {
+            display: flex;
+        }
+        nav ul {
+            position: absolute;
+            right: 0;
+            top: 48%;
+            height: 100vh;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            background-color: #53bd84;
+            transform: translateX(100%);
+            transition: all 1s;
+        }
+        nav ul.slide {
+            transform: translateX(0);
+        }
+    }</style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h2>Wisata Gunung Dempo</h2>
+        <p>Gunung Dempo (3'173 mdpl) terletak di perbatasan provinsi Sumatra Selatan dan provinsi Bengkulu tepatnya di kota dingin penghasil kopi robusta[butuh rujukan] yaitu Kota Pagaralam.</p>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <h4>Pagar Alam Park</h4>
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#wisata">Wisata</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article id="about" class="card">
+                <h2>About</h2>
+                <h3>Kota Pagar Alam</h3>
+                <br>
+                <img src="https://i1.wp.com/www.kodesingkatan.com/wp-content/uploads/2016/11/kota-pagar-alam.jpg?fit=1280%2C540&ssl=1" class="featured-image" alt="logo">
+                <p>Kota Pagar Alam adalah salah satu kota di provinsi Sumatra Selatan yang dibentuk berdasarkan Undang–Undang Nomor 8 Tahun 2001 (Lembaran Negara RI Tahun 2001 Nomor 88, Tambahan Lembaran Negara RI Nomor 4115), sebelumnya kota Pagar Alam
+                    termasuk kota administratif dalam lingkungan Kabupaten Lahat. Kota ini memiliki luas sekitar 633,66 km² dengan jumlah penduduk 189.761 jiwa (2019) dan memiliki kepadatan penduduk sekitar 199 jiwa/km². Kota ini berjarak sekitar 298
+                    km dari kota Palembang dan juga berjarak sekitar 60 km di sebelah barat daya Kabupaten Lahat. Kota ini sekarang dipimpin oleh Alpian Maskoni, SH dan Muhammad Fadli, SE sebagai Walikota dan Wakil Walikota Pagar Alam periode 2018-2023
+                </p>
+            </article>
+
+            <article id="wisata" class="card">
+                <br>
+                <h2>Wisata</h2>
+                <h3>Gunung Dempo</h3>
+                <br>
+                <img src="https://lh3.googleusercontent.com/proxy/BxIMJ0j0k3KyH-gcBscZgoGxTOFvI0zeUl6yC8sIr7OYf6PiW5PEjZFwz3AYx9LRmp1oooVGthbcBYeaKCDaVbkY4Exhr9Px1v_m5BIhqYGTarjA" class="featured-image" alt="gunung dempo">
+                <p>Gunung Dempo terletak di perbatasan provinsi Sumatra Selatan dan provinsi Bengkulu tepatnya di kota dingin penghasil kopi robusta yaitu Kota Pagaralam. Gunung Dempo terletak di kota Pagaralam, dengan jarak tempuh darat sekitar 7 jam dari
+                    Palembang, ibu kota provinsi Sumatra Selatan. Sesuai dengan namanya, Kota Pagaralam dikelilingi oleh pegunungan Bukit Barisan dan yang tertinggi adalah Gunung Dempo.</p>
+                <br>
+                <h3>Lematang Indah Air Terjun</h3>
+                <br>
+                <img src="https://wisatazainal.files.wordpress.com/2018/11/lematang-indah-1.jpg" class="featured-image" alt="lematang-indah">
+                <p>Lematang Indah Air Terjun adalah salah satu wisata yang ada di Kota Pagar Alam.</p>
+                <br>
+                <h3>Curup Embun</h3>
+                <br>
+                <img src="https://cdnaz.cekaja.com/media/2018/07/Curup-Maung-noyvesto.net_-2048x1030.jpg" class="featured-image" alt="curup-embun">
+                <p>Curup Embun adalah salah satu wisata yang ada di Kota Pagar Alam dan masih banyak lagi wisata-wisata yang ada di kota pagar alam.</p>
+            </article>
+            <div class="flex-box">
+                <div class="thumbnail card">
+                    <h2>Gallery</h2>
+                    <h3>Pengunjung</h3>
+                    <img height="210px" src="https://wisatalengkap.com/wp-content/uploads/2017/02/12558934_174482816255013_1065658626_n-1-1280x720.jpg" class="featured" alt="pengunjung">
+                    <div class="caption">Gambar 1.1</div>
+                </div>
+
+                <div class="thumbnail card">
+                    <h3>Kawah Gunung</h3>
+                    <img src="https://www.rutewisata.com/wp-content/uploads/2016/12/Tempat-Wisata-Di-Pagaralam-Gunung-Dempo-1280x720.jpg" class="featured" alt="gunung">
+                    <div class="caption">Gambar 1.2</div>
+                </div>
+
+                <div class="thumbnail card">
+                    <h3>Lereng Gunung</h3>
+                    <img src="https://alarham.files.wordpress.com/2015/06/w3.jpg" class="featured" alt="natural">
+                    <div class="caption">Gambar 1.3</div>
+                </div>
+
+                <div class="thumbnail card">
+                    <h3>Besh Hotel</h3>
+                    <img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1552802159/rljfjwmlgod09rxksgap.jpg" class="featured" alt="besh-kopi">
+                    <div class="caption">Gaambar 1.4</div>
+                </div>
+            </div>
+        </div>
+
+        <aside>
+            <article class="profile card">
+                <header>
+                    <h2>Biografi</h2>
+                    <br>
+                    <figure>
+                        <img src="https://1.bp.blogspot.com/-j_CVIUJUqJ4/X4SSsVyVJHI/AAAAAAAAQFk/bi3vBSy69gM8pK3eqBB-J0KOFJoIHGTawCLcBGAsYHQ/s320/IMG_20200922_144509.jpg">
+                        <figcaption>Gambar</figcaption>
+                    </figure>
+                </header>
+                <section>
+                    <h3>Informasi Lain</h3>
+                    <table>
+                        <tr>
+                            <td>Nama Lengkap :</td>
+                            <th>Yoga Arinanda</th>
+                        </tr>
+                        <tr>
+                            <td>Tempat/Tgl Lahir :</td>
+                            <th>Padang Bindu, 27 Desember 1997</th>
+                        </tr>
+                        <tr>
+                            <td>Agama :</td>
+                            <th>Islam</th>
+                        </tr>
+                        <tr>
+                            <td>Pekerjaan :</td>
+                            <th>Mahasiswa</th>
+                        </tr>
+                        <tr>
+                            <td>Alamat :</td>
+                            <th>Dusun I Desa Durian Remuk Kec. Muara Beliti</th>
+                        </tr>
+                    </table>
+                </section>
+            </article>
+        </aside>
+    </main>
+    <footer>
+        <p>Pagar Alam Park &#169; 2020</p>
+    </footer>
+    <script src="assets/styles/script.js"></script>
+</body>
+
+</html>
